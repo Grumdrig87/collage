@@ -11,20 +11,21 @@ jQuery(document).ready(function($) {
   // closeSearch();
   
   //slider
-  // if (jQuery('[data-review]').length > 0) {
-  //     $('[data-review]').slick({
-  //         dots: false,
-  //         speed: 300,
-  //         slidesToShow: 1,
-  //         rows: 2,
-  //         // responsive: [{
-  //         //     breakpoint: 768,
-  //         //     settings: {
-  //         //         slidesToShow: 1
-  //         //     }
-  //         // }, ]
-  //     });
-  // }
+  if (jQuery('[data-mainslider]').length > 0) {
+      $('[data-mainslider]').slick({
+          dots: false,
+          speed: 300,
+          arrows: false,
+          slidesToShow: 1,
+          variableWidth: true,
+          // responsive: [{
+          //     breakpoint: 768,
+          //     settings: {
+          //         slidesToShow: 1
+          //     }
+          // }, ]
+      });
+  }
 
   
    //miss click burger
