@@ -6,8 +6,13 @@ jQuery(document).ready(function($) {
     $('[data-nav]').toggleClass("open");
     $('body').toggleClass('open');
 });
-
-
+// scroll top
+  $('[data-scoll]').on("click", function (event) {
+    event.preventDefault();
+    var id  = $(this).attr('href'),
+        top = $(id).offset().top;
+    $('body,html').animate({scrollTop: top}, 1500);
+  });
   // closeSearch();
   
   //slider
@@ -26,6 +31,38 @@ jQuery(document).ready(function($) {
           // }, ]
       });
   }
+  if (jQuery('[data-movie]').length > 0) {
+    $('[data-movie]').slick({
+        dots: false,
+        speed: 300,
+        slidesToShow: 4,
+        infinite: true,
+        prevArrow: '[data-movieprev]',
+        nextArrow: '[data-movienext]',
+        // responsive: [{
+        //     breakpoint: 768,
+        //     settings: {
+        //         slidesToShow: 1
+        //     }
+        // }, ]
+    });
+}
+if (jQuery('[data-recomend]').length > 0) {
+  $('[data-recomend]').slick({
+      dots: false,
+      speed: 300,
+      slidesToShow: 4,
+      infinite: true,
+      prevArrow: '[data-recomprev]',
+      nextArrow: '[data-recomnext]',
+      // responsive: [{
+      //     breakpoint: 768,
+      //     settings: {
+      //         slidesToShow: 1
+      //     }
+      // }, ]
+  });
+}
 
   
    //miss click burger
