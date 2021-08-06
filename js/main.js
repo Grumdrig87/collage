@@ -63,8 +63,27 @@ if (jQuery('[data-recomend]').length > 0) {
       // }, ]
   });
 }
+  $('[data-florselect]').select2({
+    width: '274',
+    placeholder: 'Какой этаж',
+    dropdownCssClass: 'select__dropdown',
+    minimumResultsForSearch: Infinity,
+    dropdownParent: $('[data-florparent]')
+  })
+  $('[data-shopsselect]').select2({
+    width: '274',
+    placeholder: 'Все магазины',
+    dropdownCssClass: 'select__dropdown',
+    minimumResultsForSearch: Infinity,
+    dropdownParent: $('[data-shopparent]')
+  })
+  // $('.select2-container').click(function(){
+  //   if ($('.select2-container').hasClass('select2-container--open')) {
+  //     $('.select2-container.select2-container--open').parent().css({'box-shadow':'5px 5px 20px rgb(0 0 0 / 15%);'})
+  //   }
+  // })
 
-  
+
    //miss click burger
    function closeSearch () {
     $(document).mouseup(function (e){ // событие клика по веб-документу
