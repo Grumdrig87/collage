@@ -162,6 +162,11 @@ a:hover {
 .title-s {
 	
 }
+.title-inner {
+	color: #FE0002;
+	text-align: center;
+	margin: 0 auto;
+}
 textarea:active,
 textarea:focus {
 	outline: none;
@@ -248,15 +253,21 @@ input {
 }
 /* ---------------breadcrumbs----------------- */
 
+.breadcrumbs__wrap {
+	background: #F2F2F2;
+	padding: 24px 0 21px;
+}
 .breadcrumbs {
 	font-family: Montserrat;
+	font-size: 16px;
 	line-height: 20px;
 	color: #333333;
-	margin-bottom: 14px;
+	margin-bottom: 12px;
 }
 
 .breadcrumbs__link {
 	font-family: Montserrat;
+	font-size: 16px;
 	line-height: 20px;
 	color: #333333;
 	text-decoration: none;
@@ -267,13 +278,7 @@ input {
 
 .breadcrumbs__separator {
 	display: block;
-	width: 3px;
-	height: 3px;
-	-webkit-border-radius: 50%;
-	-moz-border-radius: 50%;
-	border-radius: 50%;
-	background: #05376C;
-	margin: 0 4px;
+	margin: 0 11px;
 }
 
 /* -----------------------------Header---------------------------- */
@@ -721,6 +726,7 @@ input {
 .foot__ban img {
 	width: 100%;
 	height: auto;
+	display: block;
 }
 .footer {
 	padding-top: 25px;

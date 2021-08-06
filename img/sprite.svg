@@ -27,4 +27,7 @@
   <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 19" id="arr-up">
     <path d="M26.475 18.525L30 15 15 0 0 15l3.525 3.525L15 7.075l11.475 11.45z" fill="#FE0002"></path>
   </symbol>
+  <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 10" id="bread-arrow">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M0 5a.5.5 0 01.5-.5h11.793L9.146 1.354a.5.5 0 11.708-.708l4 4a.5.5 0 010 .708l-4 4a.5.5 0 11-.708-.708L12.293 5.5H.5A.5.5 0 010 5z" fill="#333"></path>
+  </symbol>
 </svg>
