@@ -63,6 +63,22 @@ if (jQuery('[data-recomend]').length > 0) {
       // }, ]
   });
 }
+if (jQuery('[data-eat]').length > 0) {
+  $('[data-eat]').slick({
+      dots: false,
+      speed: 300,
+      slidesToShow: 1,
+      infinite: true,
+      prevArrow: '[data-eatprev]',
+      nextArrow: '[data-eatnext]',
+      // responsive: [{
+      //     breakpoint: 768,
+      //     settings: {
+      //         slidesToShow: 1
+      //     }
+      // }, ]
+  });
+}
   $('[data-florselect]').select2({
     width: '274',
     placeholder: 'Какой этаж',
