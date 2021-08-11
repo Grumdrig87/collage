@@ -245,21 +245,35 @@
         </section>
         <section class="quest">
             <div class="container">
-                <h2 class="title-l">
-                    Ваши вопросы (жалобы и предложения)
-                </h2>
+                <div class="quest__top">
+                    <div class="quest__title active">
+                        <h2 class="title-l">
+                            Ваши вопросы (жалобы и предложения)
+                        </h2>
+                    </div>
+                    <div class="quest__title">
+                        <h2 class="title-l">
+                            мы открыты для сотрудничества
+                        </h2>
+                    </div>
+                    <div class="quest__title">
+                        <h2 class="title-l">
+                            мы открыты для сотрудничества
+                        </h2>
+                    </div>
+                </div>
                 <p class="quest__txt">
                     Вы можете задать нам любой вопрос используя формы обратной связи ниже, наши сотрудники ответям вам как можно раньше.
                 </p>
                 <div class="quest__wrap">
                     <ul class="quest__tabs df aic main__news-cat">
-                        <li class="active">
+                        <li class="active" data-contacts>
                             Предложения / жалобы
                         </li>
-                        <li>
+                        <li data-contacts>
                             Арендодателям
                         </li>
-                        <li>
+                        <li data-contacts>
                             Вопросы рекламы
                         </li>
                     </ul>
@@ -291,13 +305,122 @@
                                     </label>
                                 </div>
                             </div>
-                            <input type="submit" value="Связаться с нами" class="btn trans" data-subm>
+                            <input type="submit" value="Отправить" class="btn trans" data-subm>
+                            <p class="form__requared">
+                                Нажимая кнопку «Отправить», вы даете согласие на обработку персональных данных согласно <a href="#">Политика конфиденциальности</a> и <a href="#">Условия использования</a>.
+                            </p>
                         </form>
                         <form action="post" class="quest__form">
-                            
+                            <div class="quest__form-wrap df fww">
+                                <div class="quest__inp-wrap">
+                                    <input type="text" name="name" id="name2" class="quest__input" required data-input>
+                                    <label for="name2">
+                                        <span>
+                                            Как вас зовут
+                                        </span>
+                                    </label>
+                                </div>
+                                <div class="quest__inp-wrap">
+                                    <input type="text" name="company" id="company" class="quest__input" required data-input>
+                                    <label for="company">
+                                        <span>
+                                            Ваша торговая марка / компания
+                                        </span>
+                                    </label>
+                                </div>
+                                <div class="quest__inp-wrap">
+                                    <input type="text" name="dolgnost" id="dolgnost" class="quest__input" required data-input>
+                                    <label for="dolgnost">
+                                        <span>
+                                            Ваша должность
+                                        </span>
+                                    </label>
+                                </div>
+                                <div class="quest__inp-wrap">
+                                    <input type="text" name="ploshad" id="ploshad" class="quest__input" required data-input>
+                                    <label for="ploshad">
+                                        <span>
+                                            Желаемая арендуемая площадь
+                                        </span>
+                                    </label>
+                                </div>
+                                <div class="quest__inp-wrap">
+                                    <input type="email" name="email" id="email" class="quest__input" required data-input>
+                                    <label for="email">
+                                        <span>
+                                            Ваша почта
+                                        </span>
+                                    </label>
+                                </div>
+                                <div class="quest__inp-wrap">
+                                    <input type="tel" name="tel" id="tel2" class="quest__input" required data-input>
+                                    <label for="tel2">
+                                        <span>
+                                            Ваш телефон
+                                        </span>
+                                    </label>
+                                </div>
+                                <div class="quest__inp-wrap">
+                                    <textarea name="question" id="question2" class="quest__input quest__textarea" required data-text></textarea>
+                                    <label for="question2">
+                                        <span>
+                                            Ваш вопрос или сообщение
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="upload__file df aic">
+                                <div class="upload__btnwrap">
+                                    <input type="file" name="attach" accept=".pptx,.ppt,.pptm" id="file" data-att>
+                                    <label for="file" class="btn upload__btn">
+                                        Обзор
+                                    </label>                                
+                                </div>
+                                <div class="upload__txt">
+                                    <p class="upload__about">
+                                        Презентация вашей ТМ или магазинов
+                                    </p>
+                                    <span class="upload__name" data-fname>
+                                        Файл не выбран...
+                                    </span>
+                                </div>
+                            </div>
+                            <input type="submit" value="Отправить" class="btn trans" data-subm>
+                            <p class="form__requared">
+                                Данная форма защищена reCAPTCHA от Google: <a href="#">Политика конфиденциальности</a> и <a href="#">Условия использования</a>.
+                            </p>
                         </form>
                         <form action="post" class="quest__form">
-                            
+                            <div class="quest__form-wrap df fww">
+                                <div class="quest__inp-wrap">
+                                    <input type="text" name="name" id="name3" class="quest__input" required data-input>
+                                    <label for="name3">
+                                        <span>
+                                            Как вас зовут
+                                        </span>
+                                    </label>
+                                </div>
+                                <div class="quest__inp-wrap">
+                                    <input type="tel" name="tel" id="tel3" class="quest__input" required data-input>
+                                    <label for="tel3">
+                                        <span>
+                                            Ваш телефон
+                                        </span>
+                                    </label>
+                                </div>
+                                <div class="quest__inp-wrap">
+                                    <textarea name="question" id="question3" class="quest__input quest__textarea" required data-text></textarea>
+                                    <label for="question3">
+                                        <span>
+                                            Ваш вопрос или сообщение
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+                            <input type="submit" value="Отправить" class="btn trans" data-subm>
+                            <p class="form__requared">
+                                Нажимая кнопку «Отправить», вы даете согласие на обработку персональных данных согласно <a href="#">Политика конфиденциальности</a> и <a href="#">Условия использования</a>.
+                            </p>
                         </form>
                     </div>
                 </div>

@@ -451,13 +451,15 @@ input {
 .main__news-top {
 	margin-bottom: 25px;
 }
-.main__news-cat li a {
+.main__news-cat li a,
+.quest__tabs li {
 	font-family: Montserrat;
 	text-transform: uppercase;
 	font-weight: 500;
 	font-size: 20px;
 	line-height: 20px;
 	padding: 10px 40px;
+	cursor: pointer;
 	-webkit-transition: all 0.3s ease;
 	-o-transition: all 0.3s ease;
 	-moz-transition: all 0.3s ease;
@@ -471,7 +473,9 @@ input {
 	text-decoration: none;
 }
 .main__news-cat li:hover a,
-.main__news-cat li.active a {
+.main__news-cat li.active a,
+.quest__tabs li:hover,
+.quest__tabs li.active {
 	color: #fff;
 	background: #FE0002;
 }
@@ -1634,15 +1638,33 @@ input {
 .empty-page__btns .btn:not(:last-child) {
 	margin-right: 20px;
 }
-
-
-
+.quest__form {
+	max-width: 764px;
+	display: none;
+}
+.quest__form.active {
+	display: block;
+}
+.quest__form .btn {
+	cursor: pointer;
+	margin: 30px 0 21px;
+}
+.form__requared {
+	font-size: 14px;
+}
+.form__requared a {
+	text-decoration: underline;
+	font-size: 14px;
+}
+.form__requared a:hover {
+	text-decoration: none;
+}
 
 .quest__form-wrap {
-	margin: -15px -20px 18px;
+	margin: -10px;
 }
 .quest__inp-wrap {
-	padding: 15px 20px;
+	padding: 10px;
 	width: 50%;
 	position: relative;
 }
@@ -1650,24 +1672,25 @@ input {
 	width: 100%;
 }
 .quest__input {
+	background: rgba(255, 255, 255, 0.5);
 	border: 1px solid #828282;
 	-webkit-box-sizing: border-box;
 	   -moz-box-sizing: border-box;
 	        box-sizing: border-box;
-	background: #F2F2F2;
-	font-family: 'Open Sans';
+	font-family: Montserrat;
 	font-size: 16px;
-	line-height: 150%;
+	line-height: 120%;
 	color: #4F4F4F;
-	padding: 26px 15px 8px;
+	padding: 27px 25px 9px;
 	width: 100%;
 }
 .quest__form-wrap label {
 	position: absolute;
 	font-family: Montserrat;
-	font-weight: 500;
+	font-size: 16px;
+	font-weight: 400;
 	line-height: 120%;
-	top: 35px;
+	top: 31px;
 	left: 35px;
 	cursor: pointer;
 	-webkit-transition: all 0.3s ease;
@@ -1679,21 +1702,69 @@ input {
 .quest__form-wrap textarea:focus + label,
 .quest__form-wrap textarea:valid + label,
 .quest__form-wrap label.checked {
-	top: 23px;
+	top: 16px;
 	font-size: 14px;
 }
 .quest__inp-wrap.alert input,
 .quest__inp-wrap.alert textarea,
 .quest__inp-wrap.alert select {
-	border-color: #EB5757;
+	border-color: #FE0002;
 }
 .quest__inp-wrap.alert label {
 	color: #EB5757;
-	top: 23px;
+	top: 16px;
 	font-size: 14px;
 }
 
 .quest__inp-wrap textarea {
 	resize: none;
-	height: 190px;
+	height: 280px;
+	display: block;
+}
+.quest {
+	padding: 65px 0 47px;
+	background: #F8F8F8;
+}
+.quest__tabs li {
+	text-transform: none;
+}
+.quest__tabs {
+	margin-bottom: 50px;
+}
+.quest .title-l {
+	max-width: unset;
+	margin-bottom: 32px;
+}
+.quest__txt {
+	margin-bottom: 56px;
+	max-width: 665px;
+	color: #333333;
+}
+.quest__title {
+	display: none;
+}
+.quest__title.active {
+	display: block;
+}
+.upload__file input {
+	display: none;
+}
+.upload__file {
+	margin-top: 20px;
+}
+.upload__btnwrap {
+	margin-right: 13px;
+}
+.upload__btn {
+	background: #828282;
+}
+.upload__about {
+	font-family: Roboto;
+	font-size: 16px;
+	margin-bottom: 3px;
+	color: #333333;
+}
+.upload__name {
+	font-family: Roboto;
+	font-size: 16px;
 }

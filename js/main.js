@@ -13,8 +13,7 @@ jQuery(document).ready(function($) {
         top = $(id).offset().top;
     $('body,html').animate({scrollTop: top}, 1500);
   });
-  // closeSearch();
-  
+
   //slider
   if (jQuery('[data-mainslider]').length > 0) {
       $('[data-mainslider]').slick({
@@ -93,11 +92,7 @@ if (jQuery('[data-eat]').length > 0) {
     minimumResultsForSearch: Infinity,
     dropdownParent: $('[data-shopparent]')
   })
-  // $('.select2-container').click(function(){
-  //   if ($('.select2-container').hasClass('select2-container--open')) {
-  //     $('.select2-container.select2-container--open').parent().css({'box-shadow':'5px 5px 20px rgb(0 0 0 / 15%);'})
-  //   }
-  // })
+
 
 
    //miss click burger
@@ -114,9 +109,16 @@ if (jQuery('[data-eat]').length > 0) {
     });
   };
 
-  var label = $("[data-input]").parent().find('label span').each(function() {$(this).text()});
-  var labelText = $("[data-text]").parent().find('label span').text();
-  console.log(labelText);
+  var label = $(".quest__form.active [data-input]").parent().find('label span').each(function() {$(this).text()});
+  var labelText = $("[data-text]").parent().find('label span').each(function() {$(this).text()});
+     // tabs
+     $('[data-contacts]').on('click', function() {
+      $(this).addClass('active').siblings().removeClass('active')
+        .closest('.quest__wrap').find('.quest__form').removeClass('active').eq($(this).index()).addClass('active');
+        $(this).closest('.quest').find('.quest__title').removeClass('active').eq($(this).index()).addClass('active');
+        label = $(".quest__form.active [data-input]").parent().find('label span').each(function() {$(this).text()});
+      });
+  
   $("[data-input]").change(function (){
     $(this).each(function(){
       input = $(this).val();
@@ -127,7 +129,21 @@ if (jQuery('[data-eat]').length > 0) {
         $(this).parent().find('label').addClass('checked')
       } else {
         $(this).attr('placeholder','');
-        $('[data-text]').parent().find('label').html(labelText);
+        $(this).parent().find('label').removeClass('checked')
+      }
+    });
+  });
+  $("[data-text]").change(function (){
+    $(this).each(function(){
+      input = $(this).val();
+      var parent = $(this).parent().index();
+      if(input) {
+        $(this).parent().find('label').html(labelText[parent]);
+        $(this).parent().removeClass('alert');
+        $(this).parent().find('label').addClass('checked')
+      } else {
+        $(this).attr('placeholder','');
+        $(this).parent().find('label').html(labelText[parent]);
         $(this).parent().find('label').removeClass('checked')
       }
     });
@@ -147,5 +163,10 @@ if (jQuery('[data-eat]').length > 0) {
     $("[data-input]").each(requ);
     $("[data-text]").each(requ);
   });
-  
+  //upload
+  if ($('[data-att]').length > 0) {
+    $('[data-att]').on('change', function() {
+      $('[data-fname]').text(this.files[0].name);
+    });
+  }
 });
