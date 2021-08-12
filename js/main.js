@@ -13,7 +13,15 @@ jQuery(document).ready(function($) {
         top = $(id).offset().top;
     $('body,html').animate({scrollTop: top}, 1500);
   });
-
+  //adaptive
+  if ($(window).width() < 994) {
+    $('[data-topmenu] ul li').each(function(){
+      $(this).appendTo('[data-nav] ul');
+    })
+  }
+  if ($(window).width() < 769) {
+    $('.header__top-contacts').appendTo('[data-nav]');
+  }
   //slider
   if (jQuery('[data-mainslider]').length > 0) {
       $('[data-mainslider]').slick({
@@ -21,14 +29,18 @@ jQuery(document).ready(function($) {
           speed: 300,
           arrows: false,
           slidesToShow: 1,
-          variableWidth: true,
-          // responsive: [{
-          //     breakpoint: 768,
-          //     settings: {
-          //         slidesToShow: 1
-          //     }
-          // }, ]
+          variableWidth: true
       });
+      if ($(window).width() < 994) {
+        $('[data-mainslider]').slick('unslick');
+        $('[data-mainslider]').slick({
+          dots: false,
+          speed: 300,
+          arrows: false,
+          slidesToShow: 1,
+          variableWidth: false
+      });
+      }
   }
   if (jQuery('[data-movie]').length > 0) {
     $('[data-movie]').slick({
@@ -38,12 +50,17 @@ jQuery(document).ready(function($) {
         infinite: true,
         prevArrow: '[data-movieprev]',
         nextArrow: '[data-movienext]',
-        // responsive: [{
-        //     breakpoint: 768,
-        //     settings: {
-        //         slidesToShow: 1
-        //     }
-        // }, ]
+        responsive: [{
+            breakpoint: 994,
+            settings: {
+                slidesToShow: 2
+            }
+        },{
+            breakpoint: 577,
+            settings: {
+                slidesToShow: 1
+            }
+        } ]
     });
 }
 if (jQuery('[data-recomend]').length > 0) {
@@ -54,12 +71,22 @@ if (jQuery('[data-recomend]').length > 0) {
       infinite: true,
       prevArrow: '[data-recomprev]',
       nextArrow: '[data-recomnext]',
-      // responsive: [{
-      //     breakpoint: 768,
-      //     settings: {
-      //         slidesToShow: 1
-      //     }
-      // }, ]
+      responsive: [{
+          breakpoint: 994,
+          settings: {
+              slidesToShow: 3
+          }
+      },{
+          breakpoint: 769,
+          settings: {
+              slidesToShow: 2
+          }
+      },{
+        breakpoint: 577,
+        settings: {
+            slidesToShow: 1
+        }
+    } ]
   });
 }
 if (jQuery('[data-eat]').length > 0) {
@@ -96,18 +123,17 @@ if (jQuery('[data-eat]').length > 0) {
 
 
    //miss click burger
-   function closeSearch () {
+
     $(document).mouseup(function (e){ // событие клика по веб-документу
       var div = $("[data-blkscr]"); // тут указываем ID элемента
       if (div.is(e.target)) { // и не по его дочерним элементам
         $('body').removeClass('open');
         $('html').removeClass("open");
-        $('[data-search]').next().removeClass('viewed');
         $('[data-burger]').removeClass("open");
         $('[data-nav]').removeClass("open");
       }
     });
-  };
+
 
   var label = $(".quest__form.active [data-input]").parent().find('label span').each(function() {$(this).text()});
   var labelText = $("[data-text]").parent().find('label span').each(function() {$(this).text()});
